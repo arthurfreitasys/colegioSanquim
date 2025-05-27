@@ -1,0 +1,9 @@
+body {
+        background-image: url(img\fundo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+.sidebar-topo img{
+    width: 130px;
+}
