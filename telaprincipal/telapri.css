@@ -2,8 +2,106 @@ body {
         background-image: url(img/fundo1.png);
         background-repeat: no-repeat;
         background-size: cover;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
     }
 
-.sidebar-topo img{
-    width: 125px;
+.sidebar{
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: -170px;
+  padding-top: 20px;
+  transition: left 0.5s;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
 }
+
+.sidebar h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.sidebar img{
+    width: 100px;
+    top: 0;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.sidebar a{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.sidebar:hover {
+    left: 0; 
+}
+ 
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .btn-sair {
+    display: flex;
+    align-items: center;
+    gap: 6px; 
+    margin: 47px;
+    margin-top: 430px;
+    text-decoration: none;
+}
+
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+}
+
+.bloco {
+   flex: 1 1 200px;
+   max-width: 250px;
+    background-color: #FFD984;
+    border-radius: 9px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  height: 200px;
+}
+
+.bloco .material-symbols-outlined {
+    font-size: 30px ;
+    cursor: pointer;
+}
+.bloco .material-symbols-outlined:hover {
+    color: whitesmoke;
+}
+
+.bloco h1 {
+    font-size: 15px;
+    color: black;
+}
+.bloco h3 {
+    font-size: 25px;
+    color: black;
+}
+
+.bloco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
