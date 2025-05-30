@@ -146,7 +146,9 @@ body {
   background: #ffffff;
  border-radius: 40px;
   display: inline-block;
-  position: fixed;
+  position: relative;
+  width: 100px;
+  height: 35px;
 }
 
 .login-box input {
