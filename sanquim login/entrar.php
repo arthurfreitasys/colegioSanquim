@@ -9,4 +9,20 @@ if(mysqli_num_rows($resultado)>0)
 else 
     header("location:login.html");
 mysqli_close($link); //fecha a conexão com o banco de dados
-?>      
+if (mysqli_num_rows($resultado) > 0) {
+    $dados = mysqli_fetch_assoc($resultado);
+    $nivel = $dados['nivel']; // Obtém o nível do usuário
+    // Redireciona com base no nível do usuário
+    if ($nivel == "aluno") {
+        header("Location:../telaprincipal/telaprincipal.html");
+    } elseif ($nivel == "professor") {
+        header("Location:../telaprincipal/telaprincipal.html");
+    } elseif ($nivel == "secretaria") {
+        header("Location: ../telaprincipal/telaprincipal.html");
+    } else {
+        header("Location: ../telaprincipal/telaprincipal.html");
+    }
+}else
+    header("location:login.html");
+mysqli_close($link); // Fecha a conexão com o banco de dados
+?>
