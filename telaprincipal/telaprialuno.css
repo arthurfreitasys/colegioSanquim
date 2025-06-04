@@ -5,12 +5,13 @@ body {
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
+        
     }
 
 .sidebar{
-    height: 100%;
-  width: 15vw; 
-  min-width: 50px; 
+  height: 100%;
+  width: 15vw;
+  min-width: 200px;
   max-width: 280px;
   position: fixed;
   top: 0;
@@ -21,7 +22,7 @@ body {
 }
 
 .sidebar h1 {
-  font-size: 20px;
+  font-size: 19px;
   text-align: center;
 }
 
@@ -40,6 +41,7 @@ body {
 
 .sidebar a:hover {
   color: #f1f1f1;
+  
 }
 
 .sidebar .btn-sair {
@@ -55,18 +57,18 @@ body {
 
 .principal {
     margin-left: 15vw;
-    padding: 60px;
+    padding: 85px;
     min-height: 50vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 95px;
+    gap: 75px;
     box-sizing: border-box;
+    justify-items: center;
 }
 
 .bloco {
    flex: 1 1 2  00px;
-   width: 100%;
-   max-width: 300px;
+   width: 330px;
     background-color: #FFD984;
     border-radius: 16px;
     padding: 25px;
@@ -74,7 +76,6 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
     cursor: pointer;
- 
 }
 
 .bloco .material-symbols-outlined {
@@ -83,6 +84,8 @@ body {
 }
 .bloco .material-symbols-outlined:hover {
     color: whitesmoke;
+   transform: translateY(-5px);
+
 }
 
 .bloco h1 {
@@ -90,7 +93,7 @@ body {
     color: black;
 }
 .bloco h3 {
-    font-size: 25px;
+    font-size: 30px;
     color: black;
 }
 
@@ -103,13 +106,13 @@ body {
 
 @media (max-width: 768px) {
     .sidebar {
-        position: relative;
         width: 100%;
         height: auto;
+        position: static;
         box-shadow: none;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         padding: 10px 20px;
     }
 
@@ -119,15 +122,14 @@ body {
 
     .sidebar .btn-sair {
         position: static;
+        bottom: auto;
+        left: auto;
     }
 
     .principal {
         margin-left: 0;
         padding: 20px;
         grid-template-columns: 1fr;
-    }
-
-    .bloco {
-        max-width: 100%;
+        gap: 20px;
     }
 }

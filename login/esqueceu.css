@@ -1,0 +1,139 @@
+body {
+  background-image:url("img/fundo.png");
+  color:  #1f1f1f;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  text-align: center;
+}
+
+.logo {
+
+ align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-box {
+    background: #FFD984;
+  border: 3px solid #379091;
+  padding: 30px;
+  display: inline-block;
+  position: relative;
+}
+.opcao {
+  background: #ffffff;
+ border-radius: 40px;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 35px;
+}
+
+.login-box input {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  color:  #379091;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 5px;
+  
+}
+
+
+
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #379091;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #42a8aa;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:before {
+  width: 100%;
+}
+
+/* optional reset for presentation */
+* {
+  font-family: Arial;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+span {
+  display: block;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  color: #777;
+}
+span a {
+  font-size: 0.7rem;
+  color: #999;
+  text-decoration: underline;
+}
