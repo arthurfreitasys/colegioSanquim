@@ -77,6 +77,11 @@ body {
  
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .bloco .material-symbols-outlined {
     font-size: 30px ;
     cursor: pointer;

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro diário de frequência</title>
+    <link rel="stylesheet" href="/telas/frequencia/frequencia.css">
+    <link rel="icon" type="image/png" href="/telaprincipal/img/logocf.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div class="menu">
+        <h1>Registro diário de frequência</h1>
+        <form>
+            <label for="data">Data:</label>
+            <input type="date" required>
+            <label for="turma" id="turmas">Turma:</label>
+            <select name="turma" required>
+                <option value="">Selecione:</option>
+                <option value="turma1">Turma1</option>
+                <option value="turma2">Turma2</option>
+                <option value="turma2">Turma3</option>
+                <option value="turma4">Turma4</option>
+            </select>
+            <label for="materia">Materia:</label>
+            <select name="turma" required>
+                 <option value="">Selecione:</option>
+                <option value="">Turma1</option>
+                <option value="">Turma2</option>
+                <option value="">Turma3</option>
+                <option value="">Turma4</option>
+            </select>
+            <label for="submit"></label>
+            <input type="submit" value="Listar alunos">
+        </form>
+    <label class="tabela" id="tabelaalunos">
+        <table>
+            <tr>
+                <th>Nº</th>
+                <th>Foto:</th>
+                 <th>Nome do Aluno</th>
+                 <th>Presente</th>
+                 <th>Falta Justificada</th>
+                 <th>Frequência geral</th>
+            </tr>
+            <tr>
+    <td>1</td>
+    <td><img src="../img/usuario.jpg" alt="Foto do aluno"></td>
+    <td>Marcos</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td> 
+    <td>95%</td>
+</tr>   
+<tr>
+    <td>2</td>
+    <td><img src="../img/usuario.jpg" alt="Foto do aluno"></td>
+    <td>Ana</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td> 
+    <td>98%</td>
+</tr>  
+<tr>
+    <td>3</td>
+    <td><img src="../img/usuario.jpg" alt="Foto do aluno"></td>
+    <td>João</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td> 
+    <td>87%</td>
+</tr>   
+<tr>
+    <td>4</td>
+    <td><img src="../img/usuario.jpg" alt="Foto do aluno"></td>
+    <td>Clara</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td> 
+    <td>92%</td>
+</tr>  
+<tr>
+    <td>5</td>
+    <td><img src="../img/usuario.jpg" alt="Foto do aluno"></td>
+    <td>Lucas</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+        <td>72%</td>
+        </table>
+    </label>
+        <div class="registrar" id="presenca">
+            <label for="registrar"></label>
+            <input type="button" value="Registrar frequência">
+        </div>
+    </div>
+    <a class="btn-sair" href="/telaprincipal/telaprincipalprof.html">
+        <span class="material-symbols-outlined">exit_to_app</span><span>Sair</span>
+    </a>    
+    <script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const tabelaalunos = document.getElementById("tabelaalunos");
+
+    tabelaalunos.style.display = "grid";
+    tabelaalunos.style.opacity = 0;
+    tabelaalunos.style.transition = "opacity 0.5s ease-in-out";
+    setTimeout(() => {
+        tabelaalunos.style.opacity = 1;
+    }, 10);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const botaoRegistrar = document.querySelector("#presenca input[type='button']");
+    
+    botaoRegistrar.addEventListener("click", function () {
+        alert("Presença registrada com sucesso!");
+    });
+});
+</script>
+</body>
+</html>

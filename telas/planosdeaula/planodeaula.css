@@ -1,8 +1,15 @@
 body{
-    background-image: url(/telaprincipal/img/fundo1.png);
+    background: #FFECC1;
         background-repeat: no-repeat;
         background-size: cover;
         font-family: Arial, sans-serif;
         padding: 0;
         margin: 0;
+}
+
+.menu {
+max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
 }

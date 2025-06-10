@@ -1,0 +1,95 @@
+body{
+    background: #FFECC1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+}
+
+.menu {
+max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.tabela {
+    padding: 15px;
+    display:none;
+   text-align: center;
+   justify-content: center;
+}
+
+
+label, select, input[type="date"], input[type="submit"] {
+    margin: 2px;
+    padding: 8px 5px;
+    border-radius: 7px;
+    border: none;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #e0a800;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+input[type="submit"], button {
+    background-color: #FFC107;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+input[type="button"], button {
+    background-color: #FFC107;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+table td img{
+    width: 35px;
+    border: none;
+    border-radius: 12px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+}
+
+table th {
+   padding: 15px 30px;
+   background-color: #FFC107;
+}
+
+table td {
+   padding: 3px 15px;
+   background-color: white;
+}
+.btn-sair {
+position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    color: #333;
+}
