@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar Material para Turma</title>
+  <link rel="stylesheet" href="material.css">
+  <link rel="stylesheet" href="/telas/frequencia/frequencia.css">
+  <link rel="icon" type="image/png" href="/telaprincipal/img/logocf.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo"><img src="img/Logo2.png" width="200" alt="Logo"></h1>
+  </div>
+
+  <div class="form">
+    <div class="form-container">
+      <h2>Envio de atividades</h2>
+      <label for="turma">Selecione a Turma:</label>
+      <select id="turma" name="turma" required>
+        <option disabled selected>Selecione:</option>
+        <option value="T1A">Turma 1A</option>
+        <option value="T1B">Turma 1B</option>
+        <option value="T2A">Turma 2A</option>
+        <option value="T2B">Turma 2B</option>
+        <option value="T3A">Turma 3A</option>
+        <option value="T3B">Turma 3B</option>
+      </select>
+      <label for="materia">Matéria:</label>
+                <select name="materia" required>
+                      <option value="">Selecione:</option>
+                      <option value="filosofia">Filosofia</option>
+                      <option value="quimica">Química</option>
+                      <option value="ingles">Inglês</option>
+                      <option value="matematica">Matemática</option>
+                      <option value="redacao">Redação</option>
+                      <option value="edfisica">Ed. Física</option>
+                      <option value="literatura">Literatura</option>
+                      <option value="sociologia">Sociologia</option>
+                </select>
+      <label for="titulo">Titulo da atividade:</label>
+      <textarea name="titulo" id="titulo" placeholder="Ex: Atividade 1 - Matemática"></textarea>
+      <label for="data">Data da atividade:</label>
+      <input type="date" name="" id="data">
+      <label for="descricao">Descrição da atividade:</label>
+      <textarea id="descricao" placeholder="Escreva um breve resumo do conteúdo" required></textarea>
+
+      <label for="arquivo">Selecionar Arquivo:</label>
+      <input type="file" id="arquivo" name="arquivo" required>
+
+      <button class="enviar" id="enviar" type="submit">Enviar para turma</button>
+    </div>
+  </div>
+  <a class="btn-sair" href="/telaprincipal/telaprincipalprof.html">
+        <span class="material-symbols-outlined">exit_to_app</span><span>Sair</span>
+    </a> 
+    
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const botaoRegistrar = document.querySelector("#enviar");
+    
+    botaoRegistrar.addEventListener("click", function () {
+        alert("Material enviado com sucesso!");
+    });
+});
+  </script>
+</body>
+</html>

@@ -2,17 +2,17 @@ body {
         background-image: url(img/fundo1.png);
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
+
         padding: 0;
         margin: 0;
         
     }
 
 .sidebar{
-  height: 100%;
-  width: 15vw;
-  min-width: 200px;
-  max-width: 280px;
+  height: 100%; 
+ min-width: 250px;
+  max-width: 300px;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +20,6 @@ body {
   transition: left 0.5s;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
 }
-
 .sidebar h1 {
   font-size: 19px;
   text-align: center;
@@ -57,10 +56,10 @@ body {
 
 .principal {
     margin-left: 15vw;
-    padding: 85px;
+    padding: 100px;
     min-height: 50vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 75px;
     box-sizing: border-box;
     justify-items: center;
@@ -69,6 +68,7 @@ body {
 .bloco {
    flex: 1 1 2  00px;
    width: 330px;
+   height: 250px;
     background-color: #FFD984;
     border-radius: 16px;
     padding: 25px;
@@ -132,4 +132,9 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }

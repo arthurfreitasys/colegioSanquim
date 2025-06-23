@@ -13,7 +13,7 @@ if (mysqli_num_rows($resultado) > 0) {
     } elseif ($nivel == "professor") {
         header("Location:../telaprincipal/telaprincipalprof.html");
     } elseif ($nivel == "gestao") {
-        header("Location: ../telaprincipal/telaprincipalsecretaria.html");
+        header("Location: ../telaprincipal/telaprincipalgestao.html");
     } else {
         header("Location: ../telaprincipal/telaprincipalaluno.html");
     }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fichas Aguardando Revisão</title>
+  <link rel="stylesheet" href="fichas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="fichas-container">
+    <h2>Fichas aguardando revisão</h2>
+    <ul class="fichas-lista">
+      <li class="ficha-card">
+        <div class="linha-dado">
+          <label>Nome:</label>
+          <span>João da Silva</span>
+        </div>
+        <div class="linha-dado">
+          <label>Data de Nascimento:</label>
+          <span>15/03/2008</span>
+        </div>
+        <div class="linha-dado">
+          <label>Responsável:</label>
+          <span>Maria da Silva</span>
+        </div>
+        <div class="linha-dado">
+          <label>Email:</label>
+          <span>maria.silva@email.com</span>
+        </div>
+        <div class="linha-dado">
+          <label>Telefone:</label>
+          <span>(11) 91234-5678</span>
+        </div>
+        <div class="botoes">
+          <a href="ficha.html">
+          <button class="button aceitar" onclick="revisarFicha('João da Silva')">Revisar</button>
+          </a>
+        </div>
+      </li>
+      <li class="ficha-card">
+        <div class="linha-dado">
+          <label>Nome:</label>
+          <span>Ana Souza</span>
+        </div>
+        <div class="linha-dado">
+          <label>Data de Nascimento:</label>
+          <span>22/07/2009</span>
+        </div>
+        <div class="linha-dado">
+          <label>Responsável:</label>
+          <span>Carlos Souza</span>
+        </div>
+        <div class="linha-dado">
+          <label>Email:</label>
+          <span>carlos.souza@email.com</span>
+        </div>
+        <div class="linha-dado">
+          <label>Telefone:</label>
+          <span>(11) 99876-5432</span>
+        </div>
+        <div class="botoes">
+          <a href="ficha.html">
+          <button class="button aceitar" onclick="revisarFicha('Ana Souza')">Revisar</button>
+          </a>
+        </div>
+      </li>
+      <!-- Adicione mais fichas conforme necessário -->
+    </ul>
+  </div>
+</body>

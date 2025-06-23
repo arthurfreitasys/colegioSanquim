@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades do Aluno</title>
+    <link rel="stylesheet" href="atividade.css">
+</head>
+<body>
+  <h1>Minhas Atividades</h1>
+
+  <div class="filtros">
+    <select id="filtroMateria">
+      <option value="todas">Selecione uma Matéria</option>
+      <option value="matematica">Matemática</option>
+      <option value="portugues">Português</option>
+      <option value="historia">História</option>
+      <option value="filosofia">Filosofia</option>
+      <option value="ciencias">Ciências</option>
+    </select>
+  </div>
+
+  <div class="kanban" id="kanban"></div>
+
+  <script>
+    const atividades = [
+      {
+        materia: 'matematica',
+        titulo: 'Frações e Porcentagem',
+        descricao: 'Resolver os exercícios da página 45 e 47',
+        dataEntrega: '2025-06-28'
+      },
+      {
+        materia: 'portugues',
+        titulo: 'Gramática: Verbos',
+        descricao: 'Analisar os verbos em um parágrafo do livro',
+        dataEntrega: '2025-06-27'
+      },
+      {
+        materia: 'filosofia',
+        titulo: 'Ética e Moral',
+        descricao: 'Redação sobre os conceitos de ética e moral',
+        dataEntrega: '2025-06-30'
+      },
+      {
+        materia: 'historia',
+        titulo: 'Revolução Francesa',
+        descricao: 'Resumir as três fases da Revolução Francesa',
+        dataEntrega: '2025-06-25'
+      },
+      {
+        materia: 'ciencias',
+        titulo: 'Sistema Circulatório',
+        descricao: 'Fazer resumo com desenho do sistema',
+        dataEntrega: '2025-07-01'
+      }
+    ];
+
+    const kanban = document.getElementById("kanban");
+    const filtroMateria = document.getElementById("filtroMateria");
+
+    function renderizarAtividades() {
+      kanban.innerHTML = "";
+
+      const materiaSel = filtroMateria.value;
+
+      if (materiaSel === "todas") {
+        const aviso = document.createElement("p");
+        aviso.textContent = "Selecione uma matéria para visualizar as atividades.";
+        aviso.style.textAlign = "center";
+        aviso.style.fontStyle = "italic";
+        aviso.style.marginTop = "40px";
+        aviso.style.color = "#666";
+        kanban.appendChild(aviso);
+        return;
+      }
+
+      const filtradas = atividades.filter(a => a.materia === materiaSel);
+
+      filtradas.forEach(a => {
+        const coluna = document.createElement("div");
+        coluna.className = "coluna";
+
+        const h2 = document.createElement("h2");
+        h2.innerText = a.titulo;
+        coluna.appendChild(h2);
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <p><strong>Descrição:</strong> ${a.descricao}</p>
+          <p><strong>Entrega até:</strong> ${a.dataEntrega}</p>
+          <label>Enviar PDF:</label>
+          <input type="file" accept=".pdf">
+          <button onclick="alert('Arquivo enviado com sucesso!')">Enviar</button>
+        `;
+
+        coluna.appendChild(card);
+        kanban.appendChild(coluna);
+      });
+    }
+
+    filtroMateria.addEventListener("change", renderizarAtividades);
+  </script>
+</body>
+</html>

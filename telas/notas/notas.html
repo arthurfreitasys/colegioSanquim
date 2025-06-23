@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Avaliação de Trabalhos</title>
+  <link rel="stylesheet" href="notas.css">
+  <link rel="icon" type="image/png" href="/telaprincipal/img/logocf.jpeg">
+</head>
+<body>
+  <h1>Painel de Avaliação de Trabalhos</h1>
+
+  <div class="filtros">
+    <select id="filtroTurma">
+      <option value="todas">Todas as Turmas</option>
+      <option value="1A">Turma 1A</option>
+      <option value="1B">Turma 1B</option>
+      <option value="2A">Turma 2A</option>
+      <option value="2B">Turma 2B</option>
+    </select>
+
+    <select id="filtroMateria">
+      <option value="todas">Todas as Matérias</option>
+      <option value="matematica">Matemática</option>
+      <option value="portugues">Português</option>
+      <option value="historia">História</option>
+      <option value="filosofia">Filosofia</option>
+      <option value="ciencias">Ciências</option>
+    </select>
+  </div>
+
+  <div class="kanban" id="kanban"></div>
+
+  <script>
+    const trabalhos = [
+      {
+        turma: '1A',
+        materia: 'matematica',
+        titulo: 'Matemática: Frações',
+        aluno: 'João Silva',
+        arquivo: 'pdfs/joao_fracoes.pdf',
+        descricao: 'Exercícios de Frações'
+      },
+      {
+        turma: '1A',
+        materia: 'matematica',
+        titulo: 'Matemática: Porcentagem',
+        aluno: 'Yngrid Souza',
+        arquivo: 'pdfs/yngrid_porcentagem.pdf',
+        descricao: 'Cálculo de Porcentagem'
+      },
+      {
+        turma: '1B',
+        materia: 'filosofia',
+        titulo: 'Filosofia: Ética',
+        aluno: 'Rafael Torres',
+        arquivo: 'pdfs/rafael_etica.pdf',
+        descricao: 'Ética e Moral na Filosofia'
+      },
+      {
+        turma: '2A',
+        materia: 'historia',
+        titulo: 'História: Revolução Francesa',
+        aluno: 'Ana Beatriz',
+        arquivo: 'pdfs/ana_revolucao.pdf',
+        descricao: 'Fases da Revolução Francesa'
+      },
+      {
+        turma: '2B',
+        materia: 'portugues',
+        titulo: 'Português: Interpretação de Texto',
+        aluno: 'Juliana Costa',
+        arquivo: 'pdfs/juliana_texto.pdf',
+        descricao: 'Análise de texto narrativo'
+      },
+      {
+        turma: '2B',
+        materia: 'portugues',
+        titulo: 'Português: Figuras de Linguagem',
+        aluno: 'Eduardo Lima',
+        arquivo: 'pdfs/eduardo_figuras.pdf',
+        descricao: 'Figuras de Linguagem'
+      },
+      {
+        turma: '3A',
+        materia: 'ciencias',
+        titulo: 'Ciências: Corpo Humano',
+        aluno: 'Fernanda Alves',
+        arquivo: 'pdfs/fernanda_digestorio.pdf',
+        descricao: 'Sistema Digestório'
+      },
+      {
+        turma: '3A',
+        materia: 'ciencias',
+        titulo: 'Ciências: Circulatório',
+        aluno: 'Bruno Martins',
+        arquivo: 'pdfs/bruno_circulatorio.pdf',
+        descricao: 'Sistema Circulatório'
+      }
+    ];
+
+    const kanban = document.getElementById("kanban");
+    const filtroTurma = document.getElementById("filtroTurma");
+    const filtroMateria = document.getElementById("filtroMateria");
+
+    function renderizarTrabalhos() {
+  kanban.innerHTML = "";
+
+  const turmaSelecionada = filtroTurma.value;
+  const materiaSelecionada = filtroMateria.value;
+
+  if (turmaSelecionada === 'todas' || materiaSelecionada === 'todas') {
+    const aviso = document.createElement("p");
+    aviso.textContent = "Selecione uma turma e uma matéria para exibir os trabalhos.";
+    aviso.style.textAlign = "center";
+    aviso.style.fontStyle = "italic";
+    aviso.style.marginTop = "40px";
+    aviso.style.color = "#666";
+    kanban.appendChild(aviso);
+    return;
+  }
+
+  const filtrados = trabalhos.filter(t => 
+    t.turma === turmaSelecionada && t.materia === materiaSelecionada
+  );
+
+  const colunas = {};
+
+  filtrados.forEach(t => {
+    const chave = `${t.turma} - ${t.titulo}`;
+    if (!colunas[chave]) colunas[chave] = [];
+    colunas[chave].push(t);
+  });
+
+  for (let chave in colunas) {
+    const div = document.createElement("div");
+    div.className = "coluna";
+
+    const h2 = document.createElement("h2");
+    h2.innerText = chave;
+    div.appendChild(h2);
+
+    colunas[chave].forEach(t => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <strong>${t.aluno}</strong>
+        <p>${t.descricao}</p>
+        <a href="${t.arquivo}" target="_blank">📄 Abrir PDF</a>
+        <input type="number" min="0" max="10" step="1" placeholder="Nota">
+        <button onclick="alert('Nota atribuída a ${t.aluno}')">Atribuir Nota</button>
+      `;
+
+      div.appendChild(card);
+    });
+
+    kanban.appendChild(div);
+  }
+}
+
+    filtroTurma.addEventListener("change", renderizarTrabalhos);
+    filtroMateria.addEventListener("change", renderizarTrabalhos);
+    renderizarTrabalhos();
+  </script>
+</body>
+</html>

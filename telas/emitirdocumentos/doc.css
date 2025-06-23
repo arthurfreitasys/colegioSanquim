@@ -1,0 +1,95 @@
+body {
+  background-image: url(/telas/img/fundo1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.topo {
+  padding: 30px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-sair {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.principal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+.bloco {
+  background-color: #ffd984;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bloco:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff3c4;
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.bloco h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.bloco p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-emitir {
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 2px solid #ccc;
+}
+
+.btn-emitir:hover {
+  background-color: #ffecb3;
+  border-color: #999;
+}

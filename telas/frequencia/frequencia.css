@@ -1,8 +1,8 @@
 body{
-    background: #FFECC1;
+    background-image: url(../../telaprincipal/img/fundo1.png);
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
         padding: 0;
         margin: 0;
 }

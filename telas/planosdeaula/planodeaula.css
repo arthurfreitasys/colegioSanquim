@@ -1,15 +1,107 @@
-body{
-    background: #FFECC1;
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        padding: 0;
-        margin: 0;
+body {
+    background-image: url(../../telaprincipal/img/fundo1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
 }
 
 .menu {
-max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+    flex: 1;
+    max-width: 600px;
+    min-width: 320px;   
+}
+
+.menu h1 {
     text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.opcao {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    border: 3px solid #379091;
+    box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="submit"],button {
+    background-color: #FFC107;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+select,input[type="text"],input[type="date"] {
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+select:focus,input[type="text"]:focus,input[type="date"]:focus {
+    border-color: #379091;
+    outline: none;
+    box-shadow: 2px 2px 6px rgba(55, 144, 145, 0.5);
+}
+
+.objetivo {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.plano {
+    flex: 1;
+    max-width: 300px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.plano h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bloco {
+    background-color: #FFD984;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    cursor: default;
 }

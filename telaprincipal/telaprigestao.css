@@ -2,14 +2,14 @@ body {
         background-image: url(img/fundo1.png);
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
         padding: 0;
         margin: 0;
     }
 
 .sidebar{
   height: 100%; 
- min-width: 200px;
+ min-width: 250px;
   max-width: 300px;
   position: fixed;
   top: 0;
@@ -54,20 +54,19 @@ body {
 }
 
 .principal {
-    margin-left: 18vw;
+    margin-left: 15vw;
     padding: 40px;
     min-height: 50vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     gap: 70px;
     box-sizing: border-box;
 }
 
 .bloco {
    flex: 1 1 2  00px;
-   width: 100%;
-    min-width: 250px;
-    max-width: 400px;
+   width: 330px;
+   height: 250px;
     background-color: #FFD984;
     border-radius: 16px;
     padding: 25px;
@@ -75,7 +74,12 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
     cursor: pointer;
-  height: 200px;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .bloco .material-symbols-outlined {
