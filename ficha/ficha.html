@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ficha Aluno</title>
+  <link rel="stylesheet" href="ficha.css">
+  <script src="ficha.js"></script>
+
+</head>
+
+<body>
+  <script src="scriptca.js"></script>
+  <div class="form-container">
+    <h2>Ficha de cadastro</h2>
+
+    <div class="linha-dado">
+      <label>Nome:</label>
+      <span>João da Silva</span>
+    </div>
+    <div class="linha-dado">
+      <label>Data de Nascimento:</label>
+      <span>01/01/2000</span>
+    </div>
+    <div class="linha-dado">
+      <label>CPF:</label>
+      <span>123.456.789-00</span>
+    </div>
+    <div class="linha-dado">
+      <label>RG:</label>
+      <span>12.345.678-9</span>
+    </div>
+    <div class="linha-dado">
+      <label>Endereço:</label>
+      <span>Rua Exemplo, 123</span>
+    </div>
+    <div class="linha-dado">
+      <label>Bairro:</label>
+      <span>Centro</span>
+    </div>
+    <div class="linha-dado">
+      <label>Cidade:</label>
+      <span>São Paulo</span>
+    </div>
+    <div class="linha-dado">
+      <label>E-mail do Responsável:</label>
+      <span>
+        responsavel@email.com
+      </span>
+    </div>
+    <div class="linha-dado">
+      <label>Telefone de Contato:</label>
+      <span>(XX) XXXX-XXXX</span>
+    </div>
+
+    <div style="display: flex; gap: 16px; margin-top: 20px;">
+      <button class="button aceitar" id="btnAceitar" onclick="mostrarTurmas()">Aceitar Matrícula</button>
+
+      <button class="button recusar" id="btnRecusar" onclick="mostrarJustificativa()">Recusar Matrícula</button>
+    </div>
+
+    <div id="justificativaDiv" style="display:none; margin-top:20px;">
+      <label for="justificativa">Motivo da recusa:</label>
+      <textarea id="justificativa" rows="3" style="width:100%; margin:8px 0;"></textarea>
+      <button class="button recusar" onclick="enviarJustificativa()">Enviar</button>
+    </div>
+
+    <!-- Modal de turmas -->
+    <div id="modalTurmas"
+      style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+      <div
+        style="background:#fff; border-radius:12px; max-width:400px; width:90%; margin:auto; padding:24px; box-shadow:0 4px 24px #0002; position:relative;">
+        <h3>Turmas com vagas disponíveis</h3>
+        <ul id="listaTurmas" style="list-style:none; padding:0; margin:16px 0;">
+          <!-- Turmas serão inseridas aqui -->
+        </ul>
+        <div id="alocarDiv" style="display:none; margin-top:16px;">
+          <span id="turmaSelecionada" style="font-weight:bold;"></span>
+          <button class="button aceitar" style="margin-left:12px;" onclick="alocarTurma()">Alocar na Turma</button>
+        </div>
+        <button class="button aceitar" onclick="fecharModalTurmas()" style="margin-top:12px;">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
