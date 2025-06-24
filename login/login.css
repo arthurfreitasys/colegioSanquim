@@ -137,7 +137,8 @@ body {
 
 .login-box {
     background: #FFD984;
-  border: 3px solid #379091;
+    border: 1px 1px 1px 1px solid #333;
+  box-shadow: 5px 10px 18px #888888;
   padding: 30px;
   display: inline-block;
   position: relative;
@@ -176,4 +177,19 @@ body {
   
 }
 
+.btn-sair {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    color: #333;
+    width: 350px;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}

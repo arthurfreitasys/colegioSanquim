@@ -1,7 +1,5 @@
 body {
-    background-image: url(../../telaprincipal/img/fundo1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(/colegioSanquim/telas/img/fundo1.png);
     font-family: 'Inter', sans-serif;
     padding: 0;
     margin: 0;

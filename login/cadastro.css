@@ -113,19 +113,21 @@ transform: translateY(-6px);
 .button:focus::before {
   opacity: 1;
 }
+.btn-sair {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    color: #333;
+}
 
-/*.button::after {
-  content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #5fd9db;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-}*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .button:hover::after, 
 .button:focus::after {

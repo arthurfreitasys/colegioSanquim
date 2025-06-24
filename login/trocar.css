@@ -1,5 +1,5 @@
 body {
-  background: url(/colegioSanquim/telas/img/fundo1.png);
+  background-image:url("img/fundo.png");
   color:  #1f1f1f;
   font-family: Arial, sans-serif;
   display: flex;
@@ -20,9 +20,7 @@ body {
 
 .login-box {
     background: #FFD984;
-  border-radius: 17px;
-  border: none;
-  box-shadow: 6px 6px 6px #888888;
+  border: 3px solid #379091;
   padding: 30px;
   display: inline-block;
   position: relative;

@@ -206,9 +206,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `nivel`, `status`) VALUES
-(1, 'aluno1', '123456', 'usuario', 1),
-(2, 'professor1', '123456', 'operador', 1),
-(3, 'admin', '654321', 'administrador', 1);
+(1, 'aluno1', '1234', 'aluno', 1),
+(2, 'professor1', '1234', 'professor', 1),
+(3, 'gestor1', '1234', 'gestor', 1);
 
 --
 -- Índices para tabelas despejadas

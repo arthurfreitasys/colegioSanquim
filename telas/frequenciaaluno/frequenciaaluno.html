@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atividades do Aluno</title>
-    <link rel="stylesheet" href="atividade.css">
-     <link rel="icon" type="image/png" href="/colegioSanquim/telaprincipal/img/logocf.jpeg">
+    <link rel="stylesheet" href="frequencialuno.css">
+    <link rel="icon" type="image/png" href="/colegioSanquim/telaprincipal/img/logocf.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-  <h1>Minhas Atividades</h1>
-
+  <div class="imagelogo">
+<img src="img/Logo2.png" width="200px" height="90px" ></div>
+    <h1>Visualize sua frequência</h1>
   <div class="filtros">
     <select id="filtroMateria">
       <option value="todas">Selecione uma Matéria</option>
@@ -23,42 +24,50 @@
   </div>
  <a class="btn-sair" href="/colegioSanquim/telaprincipal/telaprincipalaluno.html">
         <span class="material-symbols-outlined">exit_to_app</span><span>Sair</span>
-    </a>  
+    </a> 
 
   <div class="kanban" id="kanban"></div>
 
   <script>
+    
+    
     const atividades = [
       {
-        materia: 'matematica',
-        titulo: 'Frações e Porcentagem',
-        descricao: 'Resolver os exercícios da página 45 e 47',
-        dataEntrega: '2025-06-28'
-      },
+    materia: 'matematica',
+    aulas: '40.',
+    ausencias: '4',
+      presenças: '36',
+      frequencia:'90%'
+
+    },
       {
         materia: 'portugues',
-        titulo: 'Gramática: Verbos',
-        descricao: 'Analisar os verbos em um parágrafo do livro',
-        dataEntrega: '2025-06-27'
-      },
+    aulas: '60.',
+    ausencias: '10',
+      presenças: '50',
+      frequencia:'83%'
+        },
       {
-        materia: 'filosofia',
-        titulo: 'Ética e Moral',
-        descricao: 'Redação sobre os conceitos de ética e moral',
-        dataEntrega: '2025-06-30'
-      },
+         materia: 'filosofia',
+    aulas: '25.',
+    ausencias: '2',
+      presenças: '23',
+      frequencia:'92%'
+         },
       {
-        materia: 'historia',
-        titulo: 'Revolução Francesa',
-        descricao: 'Resumir as três fases da Revolução Francesa',
-        dataEntrega: '2025-06-25'
-      },
+         materia: 'historia',
+    aulas: '25.',
+    ausencias: '4',
+      presenças: '21',
+      frequencia:'84%'
+        },
       {
         materia: 'ciencias',
-        titulo: 'Sistema Circulatório',
-        descricao: 'Fazer resumo com desenho do sistema',
-        dataEntrega: '2025-07-01'
-      }
+    aulas: '60.',
+    ausencias: '3',
+      presenças: '57',
+      frequencia:'95%'
+    }
     ];
 
     const kanban = document.getElementById("kanban");
@@ -71,7 +80,7 @@
 
       if (materiaSel === "todas") {
         const aviso = document.createElement("p");
-        aviso.textContent = "Selecione uma matéria para visualizar as atividades.";
+        aviso.textContent = "Selecione uma matéria para visualizar a frequência.";
         aviso.style.textAlign = "center";
         aviso.style.fontStyle = "italic";
         aviso.style.marginTop = "40px";
@@ -86,19 +95,16 @@
         const coluna = document.createElement("div");
         coluna.className = "coluna";
 
-        const h2 = document.createElement("h2");
-        h2.innerText = a.titulo;
-        coluna.appendChild(h2);
+       
 
         const card = document.createElement("div");
         card.className = "card";
 
         card.innerHTML = `
-          <p><strong>Descrição:</strong> ${a.descricao}</p>
-          <p><strong>Entrega até:</strong> ${a.dataEntrega}</p>
-          <label>Enviar PDF:</label>
-          <input type="file" accept=".pdf">
-          <button onclick="alert('Arquivo enviado com sucesso!')">Enviar</button>
+          <p><strong>Aulas:</strong> ${a.aulas}</p>
+          <p><strong>Ausencias:</strong> ${a.ausencias}</p>    
+          <p><strong>Presenças:</strong> ${a.presenças}</p>   
+          <p><strong>Frequencia:</strong> ${a.frequencia}</p>   
         `;
 
         coluna.appendChild(card);
