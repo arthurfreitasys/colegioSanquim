@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Turmas</title>
+  <link rel="stylesheet" href="turmas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+  <h1>Gestão de Turmas</h1>
+
+  <div class="filtros">
+    <select id="filtroTurma" onchange="mostrarTurma()">
+      <option value="">-- Selecione uma turma --</option>
+      <option value="1A">Turma 1A</option>
+      <option value="1B">Turma 1B</option>
+      <option value="2A">Turma 2A</option>
+    </select>
+  </div>
+
+  <div id="turma1A" class="tabela-turma" style="display: none;">
+    <h2>Turma 1A</h2>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>RA</th>
+        <th>Frequência (%)</th>
+      </tr>
+      <tr>
+        <td><input type="text" value="João Silva"></td>
+        <td><input type="text" value="12345"></td>
+        <td><input type="number" value="87"></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="João Silva"></td>
+        <td><input type="text" value="12345"></td>
+        <td><input type="number" value="87"></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="João Silva"></td>
+        <td><input type="text" value="12345"></td>
+        <td><input type="number" value="87"></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="Yngrid Souza"></td>
+        <td><input type="text" value="12346"></td>
+        <td><input type="number" value="93"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="turma1B" class="tabela-turma" style="display: none;">
+    <h2 style="text-align:center;">Turma 1B</h2>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>RA</th>
+        <th>Frequência (%)</th>
+      </tr>
+      <tr>
+        <td><input type="text" value="Rafael Torres"></td>
+        <td><input type="text" value="12347"></td>
+        <td><input type="number" value="75"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="turma2A" class="tabela-turma" style="display: none;">
+    <h2 style="text-align:center;">Turma 2A</h2>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>RA</th>
+        <th>Frequência (%)</th>
+      </tr>
+      <tr>
+        <td><input type="text" value="Ana Beatriz"></td>
+        <td><input type="text" value="12348"></td>
+        <td><input type="number" value="90"></td>
+      </tr>
+    </table>
+  </div>
+   <a class="btn-sair" href="/telaprincipal/telaprincipalgestao.html">
+        <span class="material-symbols-outlined">exit_to_app</span><span>Sair</span>
+    </a>  
+  <script>
+    function mostrarTurma() {
+      const turmaSelecionada = document.getElementById('filtroTurma').value;
+      const todas = document.querySelectorAll('.tabela-turma');
+
+      todas.forEach(div => div.style.display = 'none');
+
+      if (turmaSelecionada) {
+        document.getElementById('turma' + turmaSelecionada).style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

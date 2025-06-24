@@ -54,12 +54,13 @@ body {
 }
 
 .principal {
-    margin-left: 15vw;
-    padding: 40px;
+    margin-top: 10vw;
+    margin-left: 16vw;
+    padding: 60px;
     min-height: 50vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    gap: 70px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 95px;
     box-sizing: border-box;
 }
 

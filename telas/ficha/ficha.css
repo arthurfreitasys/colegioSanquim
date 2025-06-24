@@ -181,3 +181,18 @@ input:focus, select:focus, textarea:focus {
     .linha-dado span {
       flex: 1;
     }
+
+        .btn-sair {
+position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 16px;
+    color: #333;
+}
+    a {
+    text-decoration: none;
+    color: inherit;
+}

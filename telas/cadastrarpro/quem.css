@@ -1,5 +1,5 @@
 body {
-  background-image:url("img/fundo.png");
+  background-image:url("/telas/img/fundo1.png");
   color:  #1f1f1f;
   font-family: Arial, sans-serif;
   display: flex;
@@ -20,7 +20,9 @@ body {
 
 .login-box {
     background: #FFD984;
-  border: 3px solid #379091;
+  border-radius: 17px;
+  border: none;
+  box-shadow: 6px 6px 6px #888888;
   padding: 30px;
   display: inline-block;
   position: relative;

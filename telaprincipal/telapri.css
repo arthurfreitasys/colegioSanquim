@@ -25,7 +25,8 @@ body {
 }
 
 .sidebar img{
-    width: 100px;
+    min-width: 100px;
+  max-width: 150px;
     top: 0;
     display: block;
     margin: 0 auto 20px auto;
@@ -53,11 +54,12 @@ body {
 }
 
 .principal {
-    margin-left: 15vw;
+    margin-top: 2vw;
+    margin-left: 20vw;
     padding: 60px;
     min-height: 50vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 95px;
     box-sizing: border-box;
 }

@@ -26,11 +26,13 @@ body {
 }
 
 .sidebar img{
-    width: 100px;
+    min-width: 100px;
+  max-width: 150px;
     top: 0;
     display: block;
     margin: 0 auto 20px auto;
 }
+
 
 .sidebar a{
   text-decoration: none;
@@ -55,14 +57,14 @@ body {
 }
 
 .principal {
-    margin-left: 15vw;
-    padding: 100px;
+    margin-top: 2vw;
+    margin-left: 20vw;
+    padding: 60px;
     min-height: 50vh;
     display: grid;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 75px;
+    gap: 95px;
     box-sizing: border-box;
-    justify-items: center;
 }
 
 .bloco {
