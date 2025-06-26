@@ -118,3 +118,10 @@ position: absolute;
     text-decoration: none;
     color: inherit;
 }
+
+.kanban {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }

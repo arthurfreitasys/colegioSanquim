@@ -11,7 +11,7 @@
 <body>
     <div class="principal">
         <div class="menu">
-            <h1>Criar plano de aula</h1>
+            <h1>Criar novo plano de aula</h1>
             <form class="opcao">
                 <label for="data">Data:</label>
                 <input type="date" required>
@@ -41,21 +41,137 @@
             </form>
         </div>
         <div class="plano">
-        <h1>Planos de aula anteriores</h1>
-           <div class="bloco">
-                <h3>10/06/2025 - Filosofia (2º Ano A)</h3>
-                <p>Compreender o conceito de ética e moral.</p>
-         </div>
-         <div class="bloco">
-                <h3>18/06/2025 - Matemática (1º Ano B)</h3>
-                <p>Introduzir o conceito de equações do 1º grau.</p>
-         </div>
-         <div class="bloco">
-                <h3>19/06/2025 - Literatura (3º Ano C)</h3>
-                <p>Analisar as principais características do romantismo no Brasil.</p>
-        </div>
-        </div>
-    </div>
+        <h1>Visualizar planos de aula anteriores</h1>
+         <div class="filtros">
+    <select id="filtroMateria">
+      <option value="todas">Selecione uma Matéria</option>
+      <option value="matematica">Matemática</option>
+      <option value="portugues">Português</option>
+      <option value="historia">História</option>
+      <option value="filosofia">Filosofia</option>
+      <option value="ciencias">Ciências</option>
+    </select>
+    <select id="filtroTurma">
+      <option value="todas">Todas as Turmas</option>
+      <option value="1A">Turma 1A</option>
+      <option value="1B">Turma 1B</option>
+      <option value="2A">Turma 2A</option>
+      <option value="2B">Turma 2B</option>
+    </select>
+  </div> 
+  </div>
+
+  <div class="kanban" id="kanban"></div>
+
+  <script>
+    const atividades = [
+      {
+    materia: 'matematica',
+    titulo: 'Aula 1 - Equações do 2º grau.',
+    descricao: 'Resolver problemas utilizando equações quadráticas.',
+    dataEntrega: '2025-06-28'
+    },
+      {
+        materia: 'portugues',
+        titulo: 'Aula 1 - Romantismo.',
+        descricao: 'Analisar as principais características do romantismo no Brasil.',
+        dataEntrega: '2025-06-27'
+        },
+      {
+         materia: 'filosofia',
+         titulo: 'Aula 1 - Sócrates e a Maiêutica.',
+        descricao: 'Entender o método socrático e sua importância para o pensamento crítico.',
+         dataEntrega: '2025-07-06'
+         },
+         {
+        materia: 'matematica',
+        titulo: 'Aula 2 - Fórmula de Bhaskara.',
+        descricao: 'Aplicar a fórmula de Bhaskara para resolver equações do 2º grau completas e incompletas.',
+        dataEntrega: '2025-07-01'
+        },
+        {
+        materia: 'portugues',
+        titulo: 'Aula 2 - Principais autores do Romantismo.',
+        descricao: 'Identificar os principais autores do romantismo brasileiro e suas obras mais relevantes.',
+        dataEntrega: '2025-06-30'
+        },
+        {
+        materia: 'filosofia',
+        titulo: 'Aula 2 - Platão e o Mundo das Ideias.',
+        descricao: 'Compreender a teoria platônica do Mundo das Ideias e sua influência na filosofia ocidental.',
+        dataEntrega: '2025-07-09'
+        },
+
+      {
+         materia: 'historia',
+         titulo: 'Aula 1 - Era Vargas.',
+        descricao: 'Compreender o contexto político e social do Brasil durante o governo de Getúlio Vargas.',
+         dataEntrega: '2025-06-30'
+        },
+        {
+         materia: 'historia',
+         titulo: 'Aula 2 - Guerra dos canudos.',
+        descricao: 'Compreender o contexto político da Guerra dos Canudos',
+         dataEntrega: '2025-06-30'
+        },
+      {
+        materia: 'ciencias',
+        titulo: 'Aula 1 - Sistema Respiratório.',
+        descricao: 'Identificar os principais órgãos do sistema respiratório humano e suas funções.',
+        dataEntrega: '2025-07-01'
+    },
+    {
+        materia: 'ciencias',
+        titulo: 'Aula 2 - Meio ambiente',
+        descricao: 'Identificar as principais causas da degradação ambiental',
+        dataEntrega: '2025-10-01'
+    }
+    ];
+
+    const kanban = document.getElementById("kanban");
+    const filtroMateria = document.getElementById("filtroMateria");
+
+    function renderizarAtividades() {
+      kanban.innerHTML = "";
+
+      const materiaSel = filtroMateria.value;
+
+      if (materiaSel === "todas") {
+        const aviso = document.createElement("p");
+        aviso.textContent = "Selecione uma matéria para visualizar o plano de aula.";
+        aviso.style.textAlign = "center";
+        aviso.style.fontStyle = "italic";
+        aviso.style.marginTop = "40px";
+        aviso.style.color = "#666";
+        kanban.appendChild(aviso);
+        return;
+      }
+
+      const filtradas = atividades.filter(a => a.materia === materiaSel);
+
+      filtradas.forEach(a => {
+        const coluna = document.createElement("div");
+        coluna.className = "coluna";
+
+        const h2 = document.createElement("h2");
+        h2.innerText = a.titulo;
+        coluna.appendChild(h2);
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <p><strong>Descrição:</strong> ${a.descricao}</p>
+          <p><strong>Data da aula:</strong> ${a.dataEntrega}</p>    
+        `;
+
+        coluna.appendChild(card);
+        kanban.appendChild(coluna);
+      });
+    }
+
+    filtroMateria.addEventListener("change", renderizarAtividades);
+  </script>
      <a class="btn-sair" href="/colegioSanquim/telaprincipal/telaprincipalprof.html">
         <span class="material-symbols-outlined">exit_to_app</span><span>Sair</span>
     </a>  
